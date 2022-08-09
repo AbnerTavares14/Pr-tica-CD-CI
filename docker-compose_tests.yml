@@ -9,7 +9,7 @@ services:
       - .env.test
 
   node_app:
-    container_name: node-app
+    container_name: db
     build: .
     ports:
       - 5000:5000
