@@ -9,10 +9,10 @@ jobs:
       - name: Make a new envfile
         uses: SpicyPizza/create-envfile@v1
         with:
-          envkey_POSTGRES_USER: "postgres"
-          envkey_POSTGRES_PASSWORD: "seravate"
-          envkey_POSTGRES_DB: "actions_test"
-          envkey_DATABASE_URL: "postgres://postgres:seravate@db_actions_test:5432/actions_test"
+          envkey_POSTGRES_USER: "${{secrets.APP_NAME}}"
+          envkey_POSTGRES_PASSWORD: "${{secrets.APP_PASSWORD}}"
+          envkey_POSTGRES_DB: "${{secrets.APP_DB}}"
+          envkey_DATABASE_URL: "${{secrets.APP_DB_URL}}"
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose_tests.yml run node_app_action npm run test

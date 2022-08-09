@@ -15,7 +15,7 @@ app.post("/students", async (req: Request, res: Response) => {
     data: students,
     skipDuplicates: true
   });
-
+  console.log("aqui2")
   res.sendStatus(201); // created
 });
 
