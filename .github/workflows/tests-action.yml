@@ -15,6 +15,6 @@ jobs:
           envkey_DATABASE_URL: "postgres://postgres:seravate@db_actions_test:5432/actions_test"
           file_name: .env.test
       - name: Run tests
-        run: docker-compose -f docker-compose_tests.yml run node_app npm run test
+        run: docker-compose -f docker-compose_tests.yml run node_app_action npm run test
       - name: Build
         run: npm i && npm run build
