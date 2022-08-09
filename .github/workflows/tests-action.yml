@@ -8,14 +8,13 @@ jobs:
         uses: actions/checkout@v3
       - name: Make a new envfile
         uses: SpicyPizza/create-envfile@v1
-				#precisamos criar um .env file por que o nosso está no gitignore
         with:
           envkey_POSTGRES_USER: "postgres"
-          envkey_POSTGRES_PASSWORD: "123456"
-          envkey_POSTGRES_DB: "banco"
-          envkey_DATABASE_URL: "postgres://postgres:123456@db_actions:5432/banco"
+          envkey_POSTGRES_PASSWORD: "seravate"
+          envkey_POSTGRES_DB: "actions_test"
+          envkey_DATABASE_URL: "postgres://postgres:seravate@db_actions_test:5432/actions_test"
           file_name: .env.test
       - name: Run tests
-        run: docker-compose -f docker-compose.yml run node_app npm run test
+        run: docker-compose -f docker-compose_tests.yml run node_app npm run test
       - name: Build
         run: npm i && npm run build
