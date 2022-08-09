@@ -16,4 +16,4 @@ services:
     depends_on:
       - db_actions_test
     env_file:
-      - .env_test
+      - .env.test
