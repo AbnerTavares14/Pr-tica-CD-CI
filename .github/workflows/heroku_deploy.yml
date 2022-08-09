@@ -6,7 +6,7 @@ on:
   
   jobs:
     Heroku_deplot,
-    runs-on ubuntu
+    runs-on: ubuntu_latest
     steps: 
       - name: Check out repository code
         users: actions/checkout@v3
